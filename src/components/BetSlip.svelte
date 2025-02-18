@@ -36,13 +36,16 @@
   }
 
   function Notifications() {
+    if (bets.length > 0) { 
+      showNotification = true;
+
+      setTimeout(() => {
+        showNotification = false; 
+      }, 3000);
+    }
+
     localStorage.removeItem("bets");
     bets = [];
-    
-    showNotification = true;
-    setTimeout(() => {
-      showNotification = false;
-    }, 3000);
   }
 </script>
 

@@ -9,14 +9,12 @@
   const api = new FakeApi();
   const dispatch = createEventDispatcher();
 
-  // 🔹 Si no hay una carrera seleccionada, se elige la primera carrera disponible
   onMount(() => {
     if (!selectedRace && racesByCountry.length > 0) {
       selectedRace = racesByCountry[0];
     }
   });
 
-  // 🔹 Función para manejar la apuesta cuando el usuario presiona "Enter"
   async function handleBet(type: string, horse: any, event: KeyboardEvent) {
     if (event.key !== "Enter") return; 
 
@@ -36,7 +34,6 @@
 
     await api.placeBet(betData);
 
-    // 🔹 Enviar la apuesta al componente `BetSlip.svelte`
     dispatch("betPlaced", betData);
 
     inputElement.value = "";

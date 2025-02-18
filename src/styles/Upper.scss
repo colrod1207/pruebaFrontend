@@ -3,9 +3,9 @@
   color: #fff;
   padding: 0;
   font-family: sans-serif;
-  width: 100%;  /* 🟢 Ocupará el ancho completo */
-  max-width: none; /* 🔴 Elimina la restricción de ancho */
-  margin: 0; /* 🔴 Evita margen automático */
+  width: 100%;  
+  max-width: none; 
+  margin: 0; 
   
   &__title {
     margin: 10px 10px 0.1rem 10px;
@@ -34,7 +34,6 @@
     }
   }
 
-  /* Contenedor izquierdo (bandera, nombre) */
   &__left {
     display: flex;
     align-items: left;
@@ -51,7 +50,6 @@
     font-weight: bold;
   }
 
-  /* Contenedor derecho (tiempo, tipo) */
   &__right {
     display: flex;
     align-items: center;

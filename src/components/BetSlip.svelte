@@ -6,33 +6,28 @@
   const api = new FakeApi();
   const dispatch = createEventDispatcher();
   export let bets = [];
+  
 
-  // 🔹 Cargar apuestas desde `localStorage` al iniciar
   onMount(() => {
     bets = JSON.parse(localStorage.getItem("bets")) || [];
   });
 
-  // 🔹 Actualizar `localStorage` cuando cambian las apuestas
   function updateLocalStorage() {
     localStorage.setItem("bets", JSON.stringify(bets));
   }
 
-  // 🔹 Agregar una apuesta sin sobrescribir las anteriores
   export function addBet(newBet) {
-    bets = [...bets, newBet]; // Agregar la apuesta sin perder las previas
+    bets = [...bets, newBet]; 
     updateLocalStorage();
 
-    // 🔹 Forzar la actualización recargando desde `localStorage`
     bets = JSON.parse(localStorage.getItem("bets")) || [];
   }
 
-  // 🔹 Eliminar una apuesta específica
   function handleRemoveBet(index: number) {
-    bets = bets.filter((_, i) => i !== index); // 🔹 Filtrar en vez de modificar directamente el array
+    bets = bets.filter((_, i) => i !== index); 
     updateLocalStorage();
   }
 
-  // 🔹 Limpiar todas las apuestas
   function clearBets() {
     localStorage.removeItem("bets");
     bets = [];

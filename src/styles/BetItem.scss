@@ -6,12 +6,12 @@
   flex-direction: column;
   align-items: flex-start;
   color: white;
-  width: 100%; /* 🔹 Que ocupe todo el ancho disponible */
+  width: 100%; 
   min-height: 60px;
-  max-height: 100px; /* 🔹 Evita que una apuesta sea demasiado alta */
+  max-height: 100px; 
   position: relative;
-  overflow: hidden; /* 🔹 Evita que el contenido se desborde */
-  box-sizing: border-box; /* 🔹 Mantiene el tamaño correcto */
+  overflow: hidden; 
+  box-sizing: border-box; 
 }
 
 
@@ -34,24 +34,23 @@ p {
 
 .bet-item__actions {
   display: flex;
-  justify-content: flex-end; /* 🔹 Alinea el monto a la derecha */
+  justify-content: flex-end; 
   align-items: center;
-  width: 100%; /* 🔹 Ocupa todo el ancho */
+  width: 100%; 
   position: absolute;
-  bottom: 5px; /* 🔹 Lo coloca en la parte inferior */
-  right: 10px; /* 🔹 Alineado a la derecha */
+  bottom: 5px; 
+  right: 10px; 
   gap: 5px;
   font-size: 14px;
 }
 
-/* 🔹 Estiliza el botón de eliminar y lo posiciona en la parte superior derecha */
 .bet-item__remove {
   background: red;
   border: none;
   color: white;
   cursor: pointer;
   padding: 5px;
-  border-radius: 8px;  /* 🔹 Cuadro con bordes redondeados */
+  border-radius: 8px;  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +62,6 @@ p {
   right: 5px;
 }
 
-/* 🔹 Ajusta el número del monto en la parte inferior derecha */
 .bet-item__amount {
   font-weight: bold;
   background: black;

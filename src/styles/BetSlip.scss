@@ -21,11 +21,11 @@
 
 .bet-slip__list {
   display: flex;
-  flex-direction: column; /* 🔹 Asegura que las apuestas se apilen correctamente */
-  gap: 10px; /* 🔹 Espaciado entre apuestas */
+  flex-direction: column; 
+  gap: 10px;
   overflow-y: auto;
-  flex-grow: 1; /* 🔹 Expande el contenedor para usar el espacio disponible */
-  max-height: 500px; /* 🔹 Ajusta la altura máxima antes de aparecer el scroll */
+  flex-grow: 1; 
+  max-height: 500px; 
   padding-right: 5px;
   width: 100%;
 }
@@ -44,34 +44,31 @@
 }
 
 .bet-item {
-  width: calc(100% - 10px); // Espacio por los bordes
-  min-height: 60px; // Mantener un alto mínimo para evitar superposición
-  margin-bottom: 10px; // Añade margen inferior para un mejor espaciado
+  width: calc(100% - 10px); 
+  min-height: 60px; 
+  margin-bottom: 10px; 
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   position: relative;
   border-radius: 5px;
-  background: #444; // Añade un fondo, si es necesario
+  background: #444; 
 }
 
-/* 🔹 Ajusta el botón para que no se solape */
 .bet-item__remove {
   position: absolute;
   top: 5px;
   right: 5px;
 }
 
-/* 🔹 Evita que el monto y el botón se superpongan */
 .bet-item__actions {
   display: flex;
-  justify-content: space-between; /* 🔹 Distribuye el espacio correctamente */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding-top: 5px;
 }
 
-/* 🔹 Ajuste del monto en la esquina inferior derecha */
 .bet-item__amount {
   font-weight: bold;
   background: black;
@@ -84,23 +81,23 @@
 }
 
 .bet-slip__submit {
-  width: 100%; /* Ocupar todo el ancho */
-  background-color: #666; /* Color de fondo similar al de la imagen */
-  color: white; /* Texto en blanco */
+  width: 100%; 
+  background-color: #666; 
+  color: white; 
   font-size: 14px;
   font-weight: bold;
-  padding: 10px 0; /* Espaciado superior e inferior */
+  padding: 10px 0; 
   border: none;
   cursor: pointer;
   text-align: center;
   display: block;
-  position: absolute; /* Lo mantiene fijo en la parte inferior */
+  position: absolute; 
   bottom: 0;
   left: 0;
 }
 
 .bet-slip__submit:hover {
-  background-color: #888; /* Efecto hover más claro */
+  background-color: #888; 
 }
 
 .bet-slip__clear{
@@ -109,7 +106,7 @@
   color: white;
   cursor: pointer;
   padding: 5px;
-  border-radius: 8px;  /* 🔹 Cuadro con bordes redondeados */
+  border-radius: 8px;  
   display: flex;
   align-items: center;
   justify-content: center;

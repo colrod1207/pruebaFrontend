@@ -7,15 +7,15 @@
   import BetSlip from './components/BetSlip.svelte';
   import type { Race } from './domain/entities/Race'; 
 
-  let racesByCountry: Race[] = [];  // 🔹 Agrega el tipo explícitamente
+  let racesByCountry: Race[] = [];  
   let selectedRace: Race | null = null;
-  let bets = []; // 🔹 Array para almacenar las apuestas
+  let bets = []; 
   const fakeApi = new FakeApi();
 
   onMount(async () => {
     racesByCountry = await fakeApi.getAllRaces();
     if (racesByCountry.length > 0) {
-      selectedRace = racesByCountry[0]; // 🔹 Si hay carreras, selecciona la primera
+      selectedRace = racesByCountry[0]; 
     }
   });
 
@@ -24,7 +24,7 @@
   }
 
   function handleBetPlaced(event: CustomEvent) {
-    bets = [...bets, event.detail]; // 🔹 Agrega la apuesta al array
+    bets = [...bets, event.detail];
   }
 
   function removeBet(betToRemove) {

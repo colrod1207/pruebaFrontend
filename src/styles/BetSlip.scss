@@ -117,3 +117,21 @@
   top: 20px;
   right: 5px;
 }
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 128, 0, 0.9);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  animation: fadeOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}

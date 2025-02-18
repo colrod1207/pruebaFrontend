@@ -1,19 +1,11 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from "svelte";
+  import { createEventDispatcher } from "svelte";
   import { FakeApi } from "../infrastructure/data/inMemory/api/FakeApi";
   import type { Race } from "../domain/entities/Race";
 
-  export let selectedRace: Race | null = null;
-  export let racesByCountry: Race[] = [];
-
+  export let selectedRace: Race | null = null; // ✅ `selectedRace` ya viene de `App.svelte`
   const api = new FakeApi();
   const dispatch = createEventDispatcher();
-
-  onMount(() => {
-    if (!selectedRace && racesByCountry.length > 0) {
-      selectedRace = racesByCountry[0];
-    }
-  });
 
   async function handleBet(type: string, horse: any, event: KeyboardEvent) {
     if (event.key !== "Enter") return; 
@@ -88,40 +80,6 @@
       {/each}
     </div>
   {:else}
-    {#if racesByCountry.length > 0}
-      <div class="race-detail__header">
-        <h3 class="race-detail__title">
-          {racesByCountry[0].country} {racesByCountry[0].name}
-        </h3>
-      </div>
-
-      <div class="race-detail__table">
-        {#each racesByCountry[0].participantes || [] as horse, i}
-          <div class="race-detail__row">
-            <input 
-              type="text" 
-              class="race-detail__input" 
-              placeholder="Win"
-              on:keydown={(e) => handleBet('Win', horse, e)}
-            />
-
-            <input 
-              type="text" 
-              class="race-detail__input" 
-              placeholder="Place"
-              on:keydown={(e) => handleBet('Place', horse, e)}
-            />
-
-            <span class="race-detail__cell">{i + 1}</span>
-            <span class="race-detail__cell">{horse.name}</span>
-            <span class="race-detail__cell">{horse.trainer}</span>
-            <span class="race-detail__cell">{horse.jockey}</span>
-            <span class="race-detail__cell">LB: {horse.weight}</span>
-            <span class="race-detail__cell">{horse.odds}</span>
-            <span class="race-detail__cell">{horse.ml}</span>
-          </div>
-        {/each}
-      </div>
-    {/if}
+    <p>Selecciona una carrera de la lista o de las próximas carreras.</p>
   {/if}
 </div>

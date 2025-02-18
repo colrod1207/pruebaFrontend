@@ -1,14 +1,28 @@
+@import url(RacestList.scss);
+@import url(Upper.scss);
+@import url(RaceDetail.scss);
+@import url(BetSlip.scss);
+@import url(BetItem.scss);
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: black;
 }
 .container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: flex-start;
+    gap: 2rem; /* Espaciado entre `RacesList` y `race-section` */
+    max-width: 1300px; /* 🔹 Aumentamos el ancho máximo */
+    width: 90%; /* 🔹 Ocupa el 90% de la pantalla */
+    margin: 0 auto;
 }
 h2 {
     color: #333;
@@ -27,9 +41,71 @@ img{
     width: 100%;
     height: 100%;
 }
-.container{
-    &__plus{
-        display: grid;
-        gap: 1rem;
-    }
+/* CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 1400px; /* 🔹 Ampliamos para mejor distribución */
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* 🔹 Distribuye los elementos */
+    align-items: flex-start;
+    gap: 2rem; /* 🔹 Espaciado entre `RacesList` y `race-section` */
 }
+
+/* CONTENEDOR PRINCIPAL DE CONTENIDO */
+.main-content {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start; /* 🔹 Alineación superior */
+}
+
+/* LISTADO DE CARRERAS */
+.races-list {
+    width: 350px;
+    flex-shrink: 0; /* 🔹 Evita que se haga más pequeño */
+}
+
+/* SECCIÓN DE DETALLES */
+.race-section {
+    flex-grow: 2; /* 🔹 Ocupa el espacio disponible */
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* AJUSTE DEL BETSLIP */
+.bet-slip {
+    flex-grow: 1;
+    max-width: 320px; /* 🔹 Ancho máximo */
+    min-width: 280px; /* 🔹 Evita que se achique demasiado */
+    height: 100vh; /* 🔹 Ocupa toda la altura de la pantalla */
+    overflow-y: auto; /* 🔹 Permite scroll si es necesario */
+    position: sticky;
+    top: 0;
+}
+
+:root {
+    --flag-uk: url("https://cdn.discordapp.com/attachments/1198670589137793146/1341265384258666506/Flag_of_the_United_Kingdom_3-5.svg.png?ex=67b55e3b&is=67b40cbb&hm=8adf9907daf15b7c7b2868a0557c460f8ca5636be6d42860ed141a604b7aeb47&");
+    --flag-spain: url("https://cdn.discordapp.com/attachments/1198670589137793146/1341256717031444534/flag_ESP.png?ex=67b55628&is=67b404a8&hm=386b8344a64b4344511f3934b3d8507d49e49d67e83c0f96125a2b9fbf0f4a43&");
+    --flag-australia: url("https://cdn.discordapp.com/attachments/1198670589137793146/1341256716586717204/flag_AUS.png?ex=67b55628&is=67b404a8&hm=2a0a399befe522343fe8f6d94223a264666a91d0f64e2018c14e0d285f7c8437&");
+    --flag-argentina: url("https://cdn.discordapp.com/attachments/1198670589137793146/1341256716133728338/flag_ARG.webp?ex=67b55628&is=67b404a8&hm=ff26002a9726f84a4ddbf0426884b09c942a74794d13f65681c232b697df9dc2&");
+  }
+  .races-list__flag--uk {
+    background-image: var(--flag-uk);
+  }
+  
+  .races-list__flag--spain {
+    background-image: var(--flag-spain);
+  }
+  
+  .races-list__flag--australia {
+    background-image: var(--flag-australia);
+  }
+  
+  .races-list__flag--argentina {
+    background-image: var(--flag-argentina);
+  }

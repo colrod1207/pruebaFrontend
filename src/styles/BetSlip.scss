@@ -1,0 +1,122 @@
+.bet-slip {
+  background: #333;
+  color: white;
+  padding: 0;
+  width: 270px;
+  border-radius: 5px;
+  border: 5px;
+  border-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 700px;
+  overflow-y: auto;
+  position: relative;
+  padding-bottom: 35px;
+
+  &__footer{
+    background-color: black;
+  }
+}
+
+.bet-slip__list {
+  display: flex;
+  flex-direction: column; /* 🔹 Asegura que las apuestas se apilen correctamente */
+  gap: 10px; /* 🔹 Espaciado entre apuestas */
+  overflow-y: auto;
+  flex-grow: 1; /* 🔹 Expande el contenedor para usar el espacio disponible */
+  max-height: 500px; /* 🔹 Ajusta la altura máxima antes de aparecer el scroll */
+  padding-right: 5px;
+  width: 100%;
+}
+
+.bet-slip__title_container{
+  background-color: #1F1F1F;
+}
+
+.bet-slip__title {
+  color: yellow;
+  font-size: normal;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  margin-left: 17px;
+}
+
+.bet-item {
+  width: calc(100% - 10px); // Espacio por los bordes
+  min-height: 60px; // Mantener un alto mínimo para evitar superposición
+  margin-bottom: 10px; // Añade margen inferior para un mejor espaciado
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 5px;
+  background: #444; // Añade un fondo, si es necesario
+}
+
+/* 🔹 Ajusta el botón para que no se solape */
+.bet-item__remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+/* 🔹 Evita que el monto y el botón se superpongan */
+.bet-item__actions {
+  display: flex;
+  justify-content: space-between; /* 🔹 Distribuye el espacio correctamente */
+  align-items: center;
+  width: 100%;
+  padding-top: 5px;
+}
+
+/* 🔹 Ajuste del monto en la esquina inferior derecha */
+.bet-item__amount {
+  font-weight: bold;
+  background: black;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 5px;
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
+}
+
+.bet-slip__submit {
+  width: 100%; /* Ocupar todo el ancho */
+  background-color: #666; /* Color de fondo similar al de la imagen */
+  color: white; /* Texto en blanco */
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 0; /* Espaciado superior e inferior */
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  position: absolute; /* Lo mantiene fijo en la parte inferior */
+  bottom: 0;
+  left: 0;
+}
+
+.bet-slip__submit:hover {
+  background-color: #888; /* Efecto hover más claro */
+}
+
+.bet-slip__clear{
+  background: red;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 8px;  /* 🔹 Cuadro con bordes redondeados */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  position: absolute;
+  top: 20px;
+  right: 5px;
+}

@@ -7,6 +7,7 @@
   const dispatch = createEventDispatcher();
   export let bets = [];
   
+  let showNotification = false;
 
   onMount(() => {
     bets = JSON.parse(localStorage.getItem("bets")) || [];
@@ -33,6 +34,16 @@
     bets = [];
     updateLocalStorage();
   }
+
+  function Notifications() {
+    localStorage.removeItem("bets");
+    bets = [];
+    
+    showNotification = true;
+    setTimeout(() => {
+      showNotification = false;
+    }, 3000);
+  }
 </script>
 
 <div class="bet-slip">
@@ -52,6 +63,9 @@
   <div class="bet-slip__footer">
     <p>Número de apuestas: {bets.length}</p>
     <p>Total: {bets.reduce((sum, bet) => sum + bet.amount, 0).toFixed(2)}</p>
-    <button class="bet-slip__submit">Realizar Apuesta</button>
+    <button class="bet-slip__submit"  on:click={Notifications}>Realizar Apuesta</button>
+    {#if showNotification}
+      <div class="notification">✅ Apuesta realizada exitosamente</div>
+    {/if}
   </div>
 </div>
